@@ -24,7 +24,7 @@ const Dashboard = () => {
     }, [])
 
     return (
-        <div className="col main pt-5 mt-3">
+        <div className="col main pt-3 mt-3">
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
                     <li className="breadcrumb-item"><a href="#nolink">Home</a></li>

@@ -1,0 +1,6 @@
+/* SideBar */
+@media only screen and (max-width: 870px) {
+    #sidebar {
+        width: 100%;
+    }
+}

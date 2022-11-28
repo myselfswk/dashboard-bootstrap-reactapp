@@ -1,51 +1,40 @@
-import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
-export const Navbar = () => {
+const MyNavbar = () => {
     return (
-        <nav className="navbar fixed-top navbar-expand-md navbar-dark bg-dark mb-3">
-            <div className="flex-row d-flex">
-                <button type="button" className="navbar-toggler mr-2 " data-toggle="offcanvas" title="Toggle responsive left sidebar">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <a className="navbar-brand" href="" title="Free Bootstrap 4 Admin Template">React BootStrap Dashboard</a>
-            </div>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="navbar-collapse collapse" id="collapsingNavbar">
-                <ul className="navbar-nav">
-                    <li className="nav-item active">
-                        <a className="nav-link" href="#">Home <span className="sr-only">Home</span></a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="//www.codeply.com">CodePly</a>
-                    </li>
-                </ul>
-                <ul className="navbar-nav ml-auto">
-                    <li className="nav-item">
-                        <a className="nav-link" href="#myAlert" data-toggle="collapse">Alert</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="" data-target="#myModal" data-toggle="modal">About</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link waves-effect waves-light text-white">
-                            <i className="fab fa-google-plus-g"></i>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link waves-effect waves-light text-white">
-                            <i className="fas fa-envelope-open-text"></i>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link waves-effect waves-light text-white">
-                            <i className="fas fa-align-justify"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    )
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Container fluid>
+                <Navbar.Brand href="/">Dashboard React-Bootstrap</Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="ml-auto">
+                        <Nav.Link href="#features">Features</Nav.Link>
+                        <Nav.Link href="#pricing">Pricing</Nav.Link>
+                        <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.2">
+                                Another action
+                            </NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="#action/3.4">
+                                Separated link
+                            </NavDropdown.Item>
+                        </NavDropdown>
+                    </Nav>
+                    <Nav>
+                        <Nav.Link href="#deets">More deets</Nav.Link>
+                        <Nav.Link eventKey={2} href="#memes">
+                            Dank memes
+                        </Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+    );
 }
-export default Navbar
+
+export default MyNavbar;
